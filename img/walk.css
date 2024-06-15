@@ -1,0 +1,77 @@
+. {
+    background-image: url(spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.-1 {
+    width: 200px;
+    height: 150px;
+    background-position: -10px -10px;
+}
+
+.-10 {
+    width: 200px;
+    height: 150px;
+    background-position: -221px -1px;
+}
+
+.-11 {
+    width: 200px;
+    height: 150px;
+    background-position: -423px -1px;
+}
+
+.-12 {
+    width: 200px;
+    height: 150px;
+    background-position: -625px -1px;
+}
+
+.-2 {
+    width: 200px;
+    height: 150px;
+    background-position: -836px -10px;
+}
+
+.-3 {
+    width: 200px;
+    height: 150px;
+    background-position: -1047px -1px;
+}
+
+.-4 {
+    width: 200px;
+    height: 150px;
+    background-position: -1249px -1px;
+}
+
+.-5 {
+    width: 200px;
+    height: 150px;
+    background-position: -1451px -1px;
+}
+
+.-6 {
+    width: 200px;
+    height: 150px;
+    background-position: -1653px -1px;
+}
+
+.-7 {
+    width: 200px;
+    height: 150px;
+    background-position: -1855px -1px;
+}
+
+.-8 {
+    width: 200px;
+    height: 150px;
+    background-position: -2057px -1px;
+}
+
+.-9 {
+    width: 200px;
+    height: 150px;
+    background-position: -2259px -1px;
+}

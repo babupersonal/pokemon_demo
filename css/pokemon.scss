@@ -1,0 +1,521 @@
+
+.hidden{
+    display: none;
+}
+.duck{
+    width: 100%;
+    height: 100vh;
+}
+
+.black-frame {
+    width: 100%;
+    height: 100vh;
+    background: #282C2C;
+    .bg-frame {
+        width: 600px;
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+        margin: auto;
+        top: 50%;
+        transform: translateY(-50%);
+        .bg {
+            width: 200%; /* 適當的寬度，使背景能夠平滑地循環 */
+            height: 100%;
+            background: url('../img/bg4.png') repeat-x;
+            background-size: cover;
+            position: absolute;
+            background-position: 0 0;
+            // animation: moveBg 10s linear infinite;
+        }
+    }
+    footer{
+        width: 100%;
+        height: 50px;
+        position: absolute;
+        bottom: 0;
+        color: #fff;
+        letter-spacing: 1.1px;
+    }
+    .work {
+        margin: 0 2rem;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        overflow: hidden;
+    
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+    .work-bg {
+        width: 40%;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        z-index: 10;
+        background-color: #000;
+        color: #fff;
+        border: 1px solid #fff;
+        overflow: hidden;
+        transition: height 0.5s ease; /* 添加過渡效果 */
+        height: 0; /* 初始高度設為0 */
+        display: none; /* 初始設置為不可見 */
+    
+        table {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+        }
+    
+        tr {
+            td {
+                color: #fff;
+                border: 1px solid #fff;
+            }
+        }
+    }
+    
+    .work-bg.active {
+        height: 300px;
+        display: block;
+    }
+    
+    @keyframes display-top {
+        0% {
+            height: 0;
+        }
+        100% {
+            height:300px;
+        }
+    }
+    
+}
+
+
+
+// @keyframes moveBg {
+//     from {
+//         transform: translateX(0);
+//     }
+//     to {
+//         transform: translateX(-50%);
+//     }
+// }
+
+
+.cat-container {
+    position: absolute;
+    bottom: 40%; /* 根據需要調整貓咪的位置 */
+    left: 50%;
+    transform: translateX(-50%); /* 將貓咪水平居中 */
+}
+
+.cat-walk {
+    width: 120px;  /* 每幀的寬度 */
+    height: 100px; /* 每幀的高度 */
+}
+.backpack {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(45deg, #3b45d8, #16c916);
+    bottom: 10rem;
+    right: 2rem;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer; 
+    animation: rotate 2s linear infinite;
+}
+.backpack-img{
+    bottom: 10rem;
+    right: 2rem;
+    border-radius: 50%;
+    position: absolute;
+    img{
+        width: 64px;
+        height: 64px;
+        padding: .3rem;
+        background: #fff;
+        border-radius: 50%;
+        margin-right: 3px;
+        margin-bottom: 3px;
+    }
+}
+.backpack-bg {
+    width: 15%;
+    height: 60%;
+    background: #fff;
+    border-radius: 20px;
+    position: fixed;
+    top: 14%;
+    right: 2rem;
+    overflow-y: auto;
+    display: none; 
+    scrollbar-width: none; 
+    scrollbar-color: #746868 rgb(192, 176, 176);
+
+    .cards {
+        width: 100%;
+        .img {
+            max-width: 100%;
+            height: 100%;
+            background-color: #000;
+        }
+        img {
+            max-width: 100%;
+            height: 100%;
+        }
+    }
+
+    .search {
+        position: sticky;
+        top: 0; 
+        z-index: 3;
+        background: #000000; 
+        padding: 1rem; 
+        input{
+            border-radius: 10px;
+            padding: 0.5em;
+        }
+    }
+    #backpack-content {
+        padding: 1rem;
+    }
+}
+
+
+.backpack-bg.active {
+    display: block;
+}
+.store {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(45deg, #3b45d8, #16c916);
+    bottom: 2rem;
+    right: 2rem;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer; 
+    animation: rotate 2s linear infinite;
+}
+.store-img{
+    bottom: 2rem;
+    right: 2rem;
+    border-radius: 50%;
+    position: absolute;
+    img{
+        width: 64px;
+        height: 64px;
+        padding: .3rem;
+        background: #fff;
+        border-radius: 50%;
+        margin-right: 3px;
+        margin-bottom: 3px;
+    }
+}
+.store-bg {
+    width: 60%;
+    height: 60%;
+    background: #fff;
+    border-radius: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y:auto;
+    display: none; 
+    scrollbar-width: thin; 
+    // scrollbar-width: none ;
+    scrollbar-color: #746868 rgb(192, 176, 176);
+    .search {
+        position: sticky;
+        top:0;
+        z-index: 3;
+        background: #000000; 
+        padding: 1rem; 
+        input{
+            border-radius: 10px;
+            padding: 0.5em;
+        }
+    }
+    .col-12{
+        padding: 1rem;
+    }
+    #pokemon-list {
+        display: flex;
+        flex-wrap: wrap;
+        .cards{
+            width: 48%; 
+            margin: 1%; 
+            box-sizing: border-box;
+            background-color: #61a3da;
+            border-radius: 14px;
+            display: flex;
+            // justify-content: space-between;
+            // align-items: center;
+            padding: 1%;
+            ul{
+                width: 40%;
+            }
+            img{
+                width: 30%;
+            }
+            form{
+                width: 30%;
+            }
+        }
+        .buy{
+            width: 80px;
+            height: 40px;
+            background-color: #fff;
+            color: #000;
+            border-radius: 1px soild #fff;
+            border-radius: 10px;
+            border: none;
+            font-weight: bold;
+        }
+        .buy:hover{
+            background-color: #000;
+            color: #fff;
+            border-radius: 1px soild #000;
+        }
+    }
+}
+.store-bg.active {
+    display: block; 
+}
+.setting{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #3b45d8, #16c916);
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    border: none;
+    animation: rotate 2s linear infinite;
+}
+.setting-btn{
+    width: 64px;
+    height: 64px;
+    background: #fff;
+    border-radius: 50%;
+    border: none;
+    position: absolute;
+    top: 33px;
+    right: 33px;
+}
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.music{
+    width: 19%;
+    height: 100%;
+    background: rgba(255, 255, 255, 1);
+    left: 0%;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: bottom-fadein 0.8s ease-in;
+    z-index: 2;
+    flex-direction: column;
+    transition: width 0.5s;
+    .info{
+        padding: 0;
+        margin: 0;
+        background: #000;
+        color: #fff;
+        .username{
+            width: 40%;
+            height: 50px;
+            overflow-wrap: break-word;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .money{
+            width: 45%;
+            height: 40%;
+            justify-content: start;
+            p{
+                font-size: 2rem;
+                margin: 0;
+            }
+        }
+        .img{
+            width: 15%;
+            img{ 
+                width: 40px;
+                height: 40px;
+            }
+        }
+        .zoom-out{
+            font-size: 2rem;
+        }
+    }
+    .muswiper{
+        background-color: #fff;
+    }
+    form{
+        width: 100%;
+        height: auto;
+        justify-content:space-around;
+        flex-direction: column;
+        background: #000;
+        label,button{
+            display: inline-block; 
+            background: #9fe714;
+            font-weight: bold;
+            width: auto;
+            height: auto;
+            border-radius: 10px;
+            padding: .5em 1em;
+            border: none;
+            font-size: 1rem;
+            line-height: normal; 
+            text-align: center; 
+            cursor: pointer; 
+            border: 1px solid #000;
+        }
+        input{
+            width: 50%;
+        }
+        .input {
+            display: none; 
+        }
+        label{
+            margin-top: 8px;
+        }
+        .c{
+            display: flex;
+            justify-content: space-between;
+        }
+        label:hover, button:hover {
+            background: #000;
+            color: #9fe714;
+            border: 1px solid #9fe714;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); 
+        }        
+    }
+    .swiper {
+        width: 100%;
+        height: 100%;
+        .swiper-slide {
+            flex-direction: column;
+            height: 100%;
+            .circle {
+                position: relative;
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+                transition: transform 0.5s linear;
+                z-index: 2; 
+            }
+            .bg1 {
+                background: url('../img/song1.jpg');
+                background-size: cover;
+                background-position: top;
+            }
+            .circle .center-point {
+                width: 30px;
+                height: 30px;
+                background: #fff;
+                border-radius: 50%;
+            }
+            
+            .circle .sound-wave {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 180px;
+                height: 180px;
+                border: 2px solid #000000;
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+                animation: soundWave 2s infinite;
+                animation-play-state: paused; // 默认暂停动画
+                z-index: 1; 
+            }
+            
+            audio {
+                border: rgba(15, 35, 0, 1) solid 4px;
+                border-radius: 30px;
+            }
+        }  
+    }
+    
+}
+@keyframes soundWave {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+    30% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: .7;
+    }
+    60% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: .4;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.6);
+        opacity: 0;
+    }
+}
+
+.music.collapsed {
+    width: 4%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+
+.zoom-in {
+    display: none;
+    width: 4%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 6;
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+}
+
+.music.collapsed ~ .zoom-in {
+    display: flex;
+}
+
+.music.collapsed > *:not(.zoom-in) {
+    display: none;
+}
+.zoom-out {
+    cursor: pointer;
+}
+
+@keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
